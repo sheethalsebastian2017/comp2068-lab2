@@ -16,11 +16,10 @@ const simpleCalculate = (method, x, y) => {
   const validOptions = ['add', 'subtract', 'multiply', 'divide'];
   
   const simpleCalculatorRoute = (request, response) => {
-    request.query.x = parseInt(request.query.x); // Parse string value of x into an integer
-    request.query.y = parseInt(request.query.y); // Parse string value of y into an integer
-  
-    const { method, x, y } = request.query; // Destructure out method, x, y from request.query
-  
+    request.query.x = parseInt(request.query.x);
+    request.query.y = parseInt(request.query.y); 
+
+    const { method, x, y } = request.query; 
     // x and y must be a number
     if (isNaN(y) || isNaN(x)) {
       return response.send('Both X and Y must be a number');
